@@ -1,0 +1,13 @@
+<%= simple_form_for @price do |f| %>
+    <table class="table">
+      <tr>
+        <td>Value:</td>
+        <td><%= f.input_field :value %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= f.button :submit %></td>
+      </tr>
+    </table>
+<% end %>
+

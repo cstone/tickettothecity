@@ -1,0 +1,48 @@
+<%= simple_form_for(@restaurant, html: {multipart: true, class: "form-horizontal"}) do |f| %>
+    <table class="table">
+      <tr>
+        <td>Title:</td>
+        <td><%= f.input_field :title %></td>
+      </tr>
+      <tr>
+        <td valign="top">Description:</td>
+        <td><%= f.input_field :description %></td>
+      </tr>
+      <tr>
+        <td valign="top">Image:</td>
+        <td><%= f.file_field :restaurant_image %></td>
+      </tr>
+      <tr>
+        <td valign="top">Address:</td>
+        <td><%= f.input_field :address %></td>
+      </tr>
+      <tr>
+        <td valign="top">Phone:</td>
+        <td><%= f.input_field :phone %></td>
+      </tr>
+      <tr>
+        <td valign="top">Website:</td>
+        <td><%= f.input_field :website %></td>
+      </tr>
+      <tr>
+        <td valign="top">Areas:</td>
+        <td><%= f.association :areas, label: false %></td>
+      </tr>
+      <tr>
+        <td valign="top">Cuisine:</td>
+        <td><%= f.association :cuisines, label: false %></td>
+      </tr>
+      <tr>
+        <td valign="top">Features:</td>
+        <td><%= f.association :features, label: false %></td>
+      </tr>
+      <tr>
+        <td valign="top">Price:</td>
+        <td><%= f.association :price, label_method: :value, label: false, as: :radio_buttons  %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.button :submit %></td>
+        <td></td>
+      </tr>
+    </table>
+<% end %>

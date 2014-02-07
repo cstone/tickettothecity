@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tickettothecity</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+  <%= javascript_include_tag "application" %>
+  <script>
+      tinymce.init({
+          selector:'textarea',
+          plugins: [
+              "advlist autolink link lists charmap print preview hr anchor pagebreak spellchecker",
+              "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+              "save table contextmenu directionality emoticons template paste textcolor"
+          ]
+      });
+  </script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
