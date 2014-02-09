@@ -1,17 +1,19 @@
 Tickettothecity::Application.routes.draw do
-  resources :restaurants
+
+  root :to => 'restaurants#show', id: '1'
+
+  resources :restaurants, only: [ :index, :show ]
+
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    resources :restaurants
+    resources :prices
+    resources :features
+    resources :cuisines
+    resources :areas
+  end
 
 
-  resources :prices
-
-
-  resources :features
-
-
-  resources :cuisines
-
-
-  resources :areas
 
 
   # The priority is based upon order of creation:

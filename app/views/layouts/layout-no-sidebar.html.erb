@@ -11,6 +11,7 @@
   <link href="https://s3.amazonaws.com/tickettothecity/css/bootstrap.css" type="text/css" rel="stylesheet"/>
   <link href="https://s3.amazonaws.com/tickettothecity/css/style.css" type="text/css" rel="stylesheet"/>
   <link href="https://s3.amazonaws.com/tickettothecity/css/prettyPhoto.css" type="text/css" rel="stylesheet"/>
+  <link href="https://s3.amazonaws.com/tickettothecity/css/tttc.css" type="text/css" rel="stylesheet"/>
   <%= javascript_include_tag "application" %>
   <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
   <script>
@@ -44,13 +45,33 @@
 
   <!--Le google fonts-->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "25f0478f-46eb-45ec-9b3a-4cde6fcd2082", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= render 'layouts/structure/header' %>
 
-<%= yield %>
+
+<section class="container">
+
+  <div class="row-fluid">
+
+
+
+
+
+    <div class="span12">
+      <%= yield %>
+    </div>
+
+
+  </div>
+</section>
+
+<br>
 
 <%= render 'layouts/structure/footer' %>
 <%= render 'layouts/structure/footer-nav' %>

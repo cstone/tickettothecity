@@ -1,41 +1,27 @@
-<h1>Listing restaurants</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Restaurant image</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>Website</th>
-    <th>Area</th>
-    <th>Cuisine</th>
-    <th>Feature</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h2>Dining</h2>
 
 <% @restaurants.each do |restaurant| %>
-  <tr>
-    <td><%= restaurant.title %></td>
-    <td><%= restaurant.description %></td>
-    <td><%= image_tag restaurant.restaurant_image.url(:thumb).to_s %></td>
-    <td><%= restaurant.address %></td>
-    <td><%= restaurant.phone %></td>
-    <td><%= restaurant.website %></td>
-    <td><%= restaurant.area_id %></td>
-    <td><%= restaurant.cuisine_id %></td>
-    <td><%= restaurant.feature_id %></td>
-    <td><%= restaurant.price_id %></td>
-    <td><%= link_to 'Show', restaurant %></td>
-    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-    <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <div class="row-fluid individualitem">
+      <div class="span10">
+    <div class="row-fluid itemtitle"><%= link_to restaurant.title, restaurant %></div>
+
+    <div class="row-fluid">
+      <% if !restaurant.areas.empty? %>
+              <%= restaurant.areas.map{|area| area.name}.join(",") %>
+      <% end %>
+    </div>
+    <div class="row-fluid">
+      <% if !restaurant.cuisines.empty? %>
+      <% restaurant.cuisines.each do |cuisine| %>
+      <strong><%= cuisine.name %></strong>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="row-fluid"><%= raw(restaurant.description) %></div>
+      </div>
+      <div class="span2">
+        <%= link_to image_tag(restaurant.restaurant_image.url(:thumb).to_s, class: 'thumbnail'), restaurant %>
+      </div>
+    </div>
+    <hr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Restaurant', new_restaurant_path %>

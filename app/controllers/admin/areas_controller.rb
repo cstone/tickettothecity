@@ -1,4 +1,4 @@
-class AreasController < ApplicationController
+class Admin::AreasController < ApplicationController
   # GET /areas
   # GET /areas.json
   def index

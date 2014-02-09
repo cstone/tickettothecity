@@ -35,6 +35,7 @@ gem 'rmagick', '2.13.2', :require => 'RMagick'
 gem 'figaro'
 gem 'simple_form'
 
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

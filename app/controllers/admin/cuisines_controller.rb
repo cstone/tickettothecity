@@ -1,4 +1,5 @@
-class CuisinesController < ApplicationController
+class Admin::CuisinesController < ApplicationController
+
   # GET /cuisines
   # GET /cuisines.json
   def index
@@ -44,7 +45,7 @@ class CuisinesController < ApplicationController
 
     respond_to do |format|
       if @cuisine.save
-        format.html { redirect_to @cuisine, notice: 'Cuisine was successfully created.' }
+        format.html { redirect_to admin_cuisine_path(@cuisine), notice: 'Cuisine was successfully created.' }
         format.json { render json: @cuisine, status: :created, location: @cuisine }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class CuisinesController < ApplicationController
 
     respond_to do |format|
       if @cuisine.update_attributes(params[:cuisine])
-        format.html { redirect_to @cuisine, notice: 'Cuisine was successfully updated.' }
+        format.html { redirect_to admin_cuisine_path(@cuisine), notice: 'Cuisine was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +77,7 @@ class CuisinesController < ApplicationController
     @cuisine.destroy
 
     respond_to do |format|
-      format.html { redirect_to cuisines_url }
+      format.html { redirect_to admin_cuisines_path }
       format.json { head :no_content }
     end
   end

@@ -43,9 +43,6 @@ class RestaurantImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  version :profile do
-    process :resize_to_fill => [250, 0]
-  end
 
   version :thumb do
     process :resize_to_limit => [100, 0]
@@ -53,6 +50,10 @@ class RestaurantImageUploader < CarrierWave::Uploader::Base
 
   version :main do
     process :resize_to_limit => [270, 0]
+  end
+
+  version :side do
+    process :resize_to_limit => [125, 0]
   end
 
   # Create different versions of your uploaded files:

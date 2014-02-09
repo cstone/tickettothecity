@@ -1,4 +1,4 @@
-class FeaturesController < ApplicationController
+class Admin::FeaturesController < ApplicationController
   # GET /features
   # GET /features.json
   def index
