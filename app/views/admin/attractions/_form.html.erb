@@ -1,0 +1,36 @@
+<%= simple_form_for([:admin, @attraction], html: {multipart: true, class: "form-horizontal"}) do |f| %>
+    <table class="table">
+      <tr>
+        <td>Title:</td>
+        <td><%= f.input :title %></td>
+      </tr>
+      <tr>
+        <td valign="top">Description:</td>
+        <td><%= f.input :description %></td>
+      </tr>
+      <tr>
+        <td valign="top">Image:</td>
+        <td><%= f.file_field :attraction_image %></td>
+      </tr>
+      <tr>
+        <td valign="top">Address:</td>
+        <td><%= f.input :address %></td>
+      </tr>
+      <tr>
+        <td valign="top">Phone:</td>
+        <td><%= f.input :phone %></td>
+      </tr>
+      <tr>
+        <td valign="top">Website:</td>
+        <td><%= f.input :website %></td>
+      </tr>
+      <tr>
+        <td valign="top">Areas:</td>
+        <td><%= f.association :areas, label: false %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.button :submit %></td>
+        <td></td>
+      </tr>
+    </table>
+<% end %>

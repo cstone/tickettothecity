@@ -3,14 +3,17 @@ Tickettothecity::Application.routes.draw do
   root :to => 'restaurants#show', id: '1'
 
   resources :restaurants, only: [ :index, :show ]
+  resources :attractions, only: [ :index, :show ]
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
     resources :restaurants
+    resources :attractions
     resources :prices
     resources :features
     resources :cuisines
     resources :areas
+    resources :types
   end
 
 

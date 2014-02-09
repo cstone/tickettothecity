@@ -1,0 +1,28 @@
+<h2>Attractions</h2>
+
+<% @attractions.each do |attraction| %>
+    <div class="row-fluid individualitem">
+      <div class="span10">
+        <div class="row-fluid itemtitle"><%= link_to attraction.title, attraction %></div>
+
+        <div class="row-fluid">
+          <% if !attraction.areas.empty? %>
+              <%= attraction.areas.map{|area| area.name}.join(",") %>
+          <% end %>
+        </div>
+        <div class="row-fluid">
+          <% if !attraction.types.empty? %>
+              <% attraction.types.each do |type| %>
+                  <strong><%= type.name %></strong>
+              <% end %>
+          <% end %>
+        </div>
+        <div class="row-fluid"><%= raw(attraction.description) %></div>
+      </div>
+      <div class="span2">
+        <%= link_to image_tag(attraction.attraction_image.url(:thumb).to_s, class: 'thumbnail'), attraction %>
+      </div>
+    </div>
+    <hr>
+<% end %>
+

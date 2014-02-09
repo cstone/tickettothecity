@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140207050347) do
+ActiveRecord::Schema.define(:version => 20140209041230) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(:version => 20140207050347) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "areas_attractions", :id => false, :force => true do |t|
+    t.integer "area_id"
+    t.integer "attraction_id"
+  end
+
+  add_index "areas_attractions", ["area_id"], :name => "index_areas_attractions_on_area_id"
+  add_index "areas_attractions", ["attraction_id"], :name => "index_areas_attractions_on_attraction_id"
+
   create_table "areas_restaurants", :id => false, :force => true do |t|
     t.integer "area_id"
     t.integer "restaurant_id"
@@ -27,6 +35,27 @@ ActiveRecord::Schema.define(:version => 20140207050347) do
 
   add_index "areas_restaurants", ["area_id"], :name => "index_areas_restaurants_on_area_id"
   add_index "areas_restaurants", ["restaurant_id"], :name => "index_areas_restaurants_on_restaurant_id"
+
+  create_table "attractions", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "attraction_image"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "website"
+    t.integer  "area_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "type_id"
+  end
+
+  create_table "attractions_types", :id => false, :force => true do |t|
+    t.integer "attraction_id"
+    t.integer "type_id"
+  end
+
+  add_index "attractions_types", ["attraction_id"], :name => "index_attractions_types_on_attraction_id"
+  add_index "attractions_types", ["type_id"], :name => "index_attractions_types_on_type_id"
 
   create_table "cuisines", :force => true do |t|
     t.string   "name"
@@ -77,6 +106,12 @@ ActiveRecord::Schema.define(:version => 20140207050347) do
     t.integer  "price_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
