@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140209041230) do
+ActiveRecord::Schema.define(:version => 20140209212902) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20140209041230) do
 
   add_index "areas_attractions", ["area_id"], :name => "index_areas_attractions_on_area_id"
   add_index "areas_attractions", ["attraction_id"], :name => "index_areas_attractions_on_attraction_id"
+
+  create_table "areas_events", :id => false, :force => true do |t|
+    t.integer "area_id"
+    t.integer "event_id"
+  end
+
+  add_index "areas_events", ["area_id"], :name => "index_areas_events_on_area_id"
+  add_index "areas_events", ["event_id"], :name => "index_areas_events_on_event_id"
 
   create_table "areas_restaurants", :id => false, :force => true do |t|
     t.integer "area_id"
@@ -71,6 +79,31 @@ ActiveRecord::Schema.define(:version => 20140209041230) do
 
   add_index "cuisines_restaurants", ["cuisine_id"], :name => "index_cuisines_restaurants_on_cuisine_id"
   add_index "cuisines_restaurants", ["restaurant_id"], :name => "index_cuisines_restaurants_on_restaurant_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.text     "details"
+    t.string   "event_image"
+    t.string   "venue"
+    t.string   "price"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "website"
+    t.integer  "area_id"
+    t.integer  "type_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.datetime "event_start"
+    t.datetime "event_end"
+  end
+
+  create_table "events_types", :id => false, :force => true do |t|
+    t.integer "type_id"
+    t.integer "event_id"
+  end
+
+  add_index "events_types", ["event_id"], :name => "index_events_types_on_event_id"
+  add_index "events_types", ["type_id"], :name => "index_events_types_on_type_id"
 
   create_table "features", :force => true do |t|
     t.string   "name"

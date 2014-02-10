@@ -17,6 +17,7 @@
       <%= image_tag @restaurant.restaurant_image.url(:main).to_s, class: 'thumbnail' %>
       </div>
       <br/>
+      <% if !@restaurant.features.empty? %>
       <div class="row-fluid itemtitle">Features</div>
 
       <div class="row-fluid">
@@ -26,7 +27,7 @@
           <% end %>
         </ul>
       </div>
-
+      <% end %>
     </div>
 
 
