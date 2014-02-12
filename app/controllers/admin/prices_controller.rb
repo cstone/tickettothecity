@@ -44,7 +44,7 @@ class Admin::PricesController < ApplicationController
 
     respond_to do |format|
       if @price.save
-        format.html { redirect_to @price, notice: 'Price was successfully created.' }
+        format.html { redirect_to admin_price_path(@price), notice: 'Price was successfully created.' }
         format.json { render json: @price, status: :created, location: @price }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class Admin::PricesController < ApplicationController
 
     respond_to do |format|
       if @price.update_attributes(params[:price])
-        format.html { redirect_to @price, notice: 'Price was successfully updated.' }
+        format.html { redirect_to admin_price_path(@price), notice: 'Price was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class Admin::PricesController < ApplicationController
     @price.destroy
 
     respond_to do |format|
-      format.html { redirect_to prices_url }
+      format.html { redirect_to admin_prices_path }
       format.json { head :no_content }
     end
   end

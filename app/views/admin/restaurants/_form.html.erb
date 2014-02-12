@@ -1,4 +1,4 @@
-<%= simple_form_for(@restaurant, html: {multipart: true, class: "form-horizontal"}) do |f| %>
+<%= simple_form_for([:admin, @restaurant], html: {multipart: true, class: "form-horizontal"}) do |f| %>
     <table class="table">
       <tr>
         <td>Title:</td>

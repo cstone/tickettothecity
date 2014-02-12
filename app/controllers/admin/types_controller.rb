@@ -1,4 +1,4 @@
-class TypesController < ApplicationController
+class Admin::TypesController < ApplicationController
   # GET /types
   # GET /types.json
   def index

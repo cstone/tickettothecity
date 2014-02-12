@@ -1,7 +1,5 @@
 class Admin::RestaurantsController < ApplicationController
 
-  layout 'page-with-left-sidebar'
-
   # GET /restaurants
   # GET /restaurants.json
   def index
