@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class EventImageUploader < CarrierWave::Uploader::Base
+class DealImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -35,7 +35,7 @@ class EventImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  process :resize_to_limit => [300, 0]
+  process :resize_to_limit => [800, 0]
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
@@ -56,12 +56,6 @@ class EventImageUploader < CarrierWave::Uploader::Base
     process :resize_to_limit => [125, 0]
   end
 
-  # Process files as they are uploaded:
-  # process :scale => [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
 
   # Create different versions of your uploaded files:
   # version :thumb do

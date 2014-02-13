@@ -1,0 +1,14 @@
+<%= simple_form_for([:admin, @deal], html: {multipart: true, class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.association :areas %>
+    <%= f.file_field :deal_image %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

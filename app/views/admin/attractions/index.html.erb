@@ -23,13 +23,13 @@
     <td><%= attraction.phone %></td>
     <td><%= attraction.website %></td>
     <td><%= attraction.area_id %></td>
-    <td><%= link_to 'Show', attraction %></td>
-    <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-    <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', admin_attraction_path(attraction) %></td>
+    <td><%= link_to 'Edit', edit_admin_attraction_path(attraction) %></td>
+    <td><%= link_to 'Destroy', admin_attraction_path(attraction), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Attraction', new_attraction_path %>
+<%= link_to 'New Attraction', new_admin_attraction_path %>

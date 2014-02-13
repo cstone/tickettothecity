@@ -1,4 +1,8 @@
 class Admin::AttractionsController < ApplicationController
+
+  layout 'admin'
+
+
   # GET /attractions
   # GET /attractions.json
   def index

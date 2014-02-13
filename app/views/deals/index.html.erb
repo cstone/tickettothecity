@@ -1,0 +1,14 @@
+<h2>Deals</h2>
+
+<% @deals.each do |deal| %>
+    <div class="row-fluid individualitem">
+      <div class="span10">
+        <div class="row-fluid itemtitle"><%= link_to deal.title, deal %></div>
+        <div class="row-fluid"><%= simple_format(deal.details.truncate(300)) %></div>
+      </div>
+      <div class="span2">
+        <%= link_to image_tag(deal.deal_image.url(:thumb).to_s, class: 'thumbnail'), deal %>
+      </div>
+    </div>
+    <hr>
+<% end %>

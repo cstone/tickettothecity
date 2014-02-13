@@ -4,6 +4,7 @@ class Area < ActiveRecord::Base
   has_and_belongs_to_many :restaurants
   has_and_belongs_to_many :attractions
   has_and_belongs_to_many :events
+  has_and_belongs_to_many :deals
 
   validates_presence_of :name
 
