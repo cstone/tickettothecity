@@ -1,4 +1,9 @@
 class Admin::PricesController < ApplicationController
+
+  layout 'admin'
+  before_filter :authenticate_admin!
+
+
   # GET /prices
   # GET /prices.json
   def index
@@ -7,17 +12,6 @@ class Admin::PricesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @prices }
-    end
-  end
-
-  # GET /prices/1
-  # GET /prices/1.json
-  def show
-    @price = Price.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @price }
     end
   end
 
@@ -44,7 +38,7 @@ class Admin::PricesController < ApplicationController
 
     respond_to do |format|
       if @price.save
-        format.html { redirect_to admin_price_path(@price), notice: 'Price was successfully created.' }
+        format.html { redirect_to admin_prices_path, notice: 'Price was successfully created.' }
         format.json { render json: @price, status: :created, location: @price }
       else
         format.html { render action: "new" }
@@ -60,7 +54,7 @@ class Admin::PricesController < ApplicationController
 
     respond_to do |format|
       if @price.update_attributes(params[:price])
-        format.html { redirect_to admin_price_path(@price), notice: 'Price was successfully updated.' }
+        format.html { redirect_to admin_prices_path, notice: 'Price was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

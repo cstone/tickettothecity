@@ -1,14 +1,11 @@
-<h1>Listing attractions</h1>
+<h2>Listing attractions</h2>
 
-<table>
+<table class="table">
   <tr>
+    <th>Attraction image</th>
     <th>Title</th>
     <th>Description</th>
-    <th>Attraction image</th>
     <th>Address</th>
-    <th>Phone</th>
-    <th>Website</th>
-    <th>Area</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,16 +13,14 @@
 
 <% @attractions.each do |attraction| %>
   <tr>
+    <td><%= image_tag attraction.attraction_image.url(:thumb).to_s, class: 'thumbnail' %></td>
     <td><%= attraction.title %></td>
     <td><%= attraction.description %></td>
-    <td><%= attraction.attraction_image %></td>
     <td><%= attraction.address %></td>
-    <td><%= attraction.phone %></td>
-    <td><%= attraction.website %></td>
     <td><%= attraction.area_id %></td>
     <td><%= link_to 'Show', admin_attraction_path(attraction) %></td>
     <td><%= link_to 'Edit', edit_admin_attraction_path(attraction) %></td>
-    <td><%= link_to 'Destroy', admin_attraction_path(attraction), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', admin_attraction_path(attraction), method: :delete, data: { confirm: 'Are you sure you want toe delete this attraction?' } %></td>
   </tr>
 <% end %>
 </table>

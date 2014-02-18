@@ -1,11 +1,11 @@
 <%= simple_form_for([:admin, @type]) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <table class="table">
+      <tr>
+        <td>Name:</td>
+        <td><%= f.input :name %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.button :submit %></td>
+      </tr>
+    </table>
 <% end %>

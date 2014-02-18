@@ -1,6 +1,8 @@
 Tickettothecity::Application.routes.draw do
 
 
+  devise_for :admins
+
   root :to => 'restaurants#show', id: '1'
 
   resources :restaurants, only: [ :index, :show ]
@@ -15,10 +17,11 @@ Tickettothecity::Application.routes.draw do
     resources :prices
     resources :features
     resources :cuisines
-    resources :areas
+    resources :areas, except: [:show]
     resources :types
     resources :events
     resources :deals
+    resources :dynamic_contents
   end
 
 

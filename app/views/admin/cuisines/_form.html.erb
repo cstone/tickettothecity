@@ -1,5 +1,18 @@
 <%= simple_form_for([:admin, @cuisine]) do |f| %>
-    <%= f.input :name %>
-    <%= f.check_box :active %>
-    <%= f.button :submit %>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><%= f.input :name %></td>
+      </tr>
+      <tr>
+        <td>Active:</td>
+        <td><%= f.check_box :active, label: false %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= f.button :submit, class: 'btn btn-primary btn-small' %></td>
+      </tr>
+    </table>
+
+
 <% end %>

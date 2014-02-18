@@ -1,4 +1,10 @@
 class Admin::FeaturesController < ApplicationController
+
+  layout 'admin'
+  before_filter :authenticate_admin!
+
+
+
   # GET /features
   # GET /features.json
   def index

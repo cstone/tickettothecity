@@ -1,35 +1,39 @@
 <%= simple_form_for([:admin, @attraction], html: {multipart: true, class: "form-horizontal"}) do |f| %>
-    <table class="table">
+    <table width="100%" class="table">
       <tr>
-        <td>Title:</td>
-        <td><%= f.input :title %></td>
+        <td width="10%">Title:</td>
+        <td width="90%"><%= f.input :title, label: false  %></td>
       </tr>
       <tr>
         <td valign="top">Description:</td>
-        <td><%= f.input :description %></td>
+        <td><%= f.input :description, label: false  %></td>
       </tr>
       <tr>
         <td valign="top">Image:</td>
-        <td><%= f.file_field :attraction_image %></td>
+        <td><%= f.file_field :attraction_image, label: false  %></td>
+      </tr>
+      <tr>
+        <td valign="top">Remove Image:</td>
+        <td><%= f.check_box :remove_attraction_image %></td>
       </tr>
       <tr>
         <td valign="top">Address:</td>
-        <td><%= f.input :address %></td>
+        <td><%= f.input :address, label: false  %></td>
       </tr>
       <tr>
         <td valign="top">Phone:</td>
-        <td><%= f.input :phone %></td>
+        <td><%= f.input :phone, label: false  %></td>
       </tr>
       <tr>
         <td valign="top">Website:</td>
-        <td><%= f.input :website %></td>
+        <td><%= f.input :website, label: false  %></td>
       </tr>
       <tr>
         <td valign="top">Areas:</td>
         <td><%= f.association :areas, label: false %></td>
       </tr>
       <tr>
-        <td valign="top"><%= f.button :submit %></td>
+        <td valign="top"><%= f.button :submit, class: 'btn btn-success' %></td>
         <td></td>
       </tr>
     </table>

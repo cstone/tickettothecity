@@ -1,6 +1,17 @@
 <%= simple_form_for([:admin, @area])  do |f| %>
-    <%= f.input :name %>
-    <%= f.input :active, label: 'Active' %>
-    <%= f.button :submit %>
+
+    <table class="table">
+      <tr>
+        <td>Name:</td>
+        <td><%= f.input :name, label: false %></td>
+      </tr>
+      <tr>
+        <td>Active:</td>
+        <td><%= f.input :active, label: false %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.button :submit, class: 'btn btn-small btn-success' %></td>
+      </tr>
+    </table>
 <% end %>
 

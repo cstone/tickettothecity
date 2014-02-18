@@ -1,6 +1,8 @@
 class Admin::DealsController < ApplicationController
 
   layout 'admin'
+  before_filter :authenticate_admin!
+
 
   # GET /deals
   # GET /deals.json

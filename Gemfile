@@ -36,6 +36,7 @@ gem 'figaro'
 gem 'simple_form'
 gem 'contact_us', '~> 0.5.0'
 
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

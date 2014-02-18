@@ -1,6 +1,8 @@
 class Admin::RestaurantsController < ApplicationController
 
   layout 'admin'
+  before_filter :authenticate_admin!
+
 
   # GET /restaurants
   # GET /restaurants.json

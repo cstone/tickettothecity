@@ -1,5 +1,9 @@
 class Admin::CuisinesController < ApplicationController
 
+  layout 'admin'
+  before_filter :authenticate_admin!
+
+
   # GET /cuisines
   # GET /cuisines.json
   def index
@@ -45,7 +49,7 @@ class Admin::CuisinesController < ApplicationController
 
     respond_to do |format|
       if @cuisine.save
-        format.html { redirect_to admin_cuisine_path(@cuisine), notice: 'Cuisine was successfully created.' }
+        format.html { redirect_to admin_cuisines_path, notice: 'Cuisine was successfully created.' }
         format.json { render json: @cuisine, status: :created, location: @cuisine }
       else
         format.html { render action: "new" }
@@ -61,7 +65,7 @@ class Admin::CuisinesController < ApplicationController
 
     respond_to do |format|
       if @cuisine.update_attributes(params[:cuisine])
-        format.html { redirect_to admin_cuisine_path(@cuisine), notice: 'Cuisine was successfully updated.' }
+        format.html { redirect_to admin_cuisines_path, notice: 'Cuisine was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

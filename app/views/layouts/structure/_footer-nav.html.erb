@@ -5,16 +5,14 @@
       <div class="span8 hidden-phone">
         <ul>
           <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Dining', root_path %></li>
-          <li><%= link_to 'Attractions', root_path %></li>
-          <li><%= link_to 'Deals', root_path %></li>
-          <li><%= link_to 'Maps', root_path %></li>
-          <li><%= link_to 'Conventioneer', root_path %></li>
-          <li><%= link_to 'About Us', root_path %></li>
-          <li><%= link_to 'Contact Us', root_path %></li>
+          <li><%= link_to 'Dining', restaurants_path %></li>
+          <li><%= link_to 'Attractions', attractions_path %></li>
+          <li><%= link_to 'Events', events_path %></li>
+          <li><%= link_to 'Deals', deals_path %></li>
+          <li><%= link_to 'Concierge', new_contact_path %></li>
         </ul>
       </div>
-      <p class="span4"><span class="pull-right">Copyright &copy;2014 TicketToTheCity.com</span></p>
+      <p class="span4"><span class="pull-right"><%= strip_tags @footer_copyright %></span></p>
     </div>
   </div>
 </section>

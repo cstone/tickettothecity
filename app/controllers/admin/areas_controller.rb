@@ -1,6 +1,7 @@
 class Admin::AreasController < ApplicationController
 
-
+ layout 'admin'
+ before_filter :authenticate_admin!
 
   # GET /areas
   # GET /areas.json
@@ -13,16 +14,6 @@ class Admin::AreasController < ApplicationController
     end
   end
 
-  # GET /areas/1
-  # GET /areas/1.json
-  def show
-    @area = Area.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @area }
-    end
-  end
 
   # GET /areas/new
   # GET /areas/new.json
@@ -63,7 +54,7 @@ class Admin::AreasController < ApplicationController
 
     respond_to do |format|
       if @area.update_attributes(params[:area])
-        format.html { redirect_to admin_area_path(@area), notice: 'Area was successfully updated.' }
+        format.html { redirect_to admin_areas_path, notice: 'Area was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
