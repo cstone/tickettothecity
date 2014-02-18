@@ -1,0 +1,17 @@
+<h3>Admin Navigation</h3>
+<ul class="nav nav-pills nav-stacked">
+  <li class: <%= cpa(root_path) %> ><%= link_to 'Admin Home', admin_events_path %></li>
+  <li class: <%= cpa(admin_restaurants_path) %> ><%= link_to 'Dining', admin_restaurants_path %></li>
+  <li class: <%= cpa(admin_attractions_path) %> ><%= link_to 'Attractions', admin_attractions_path  %></li>
+  <li class: <%= cpa(admin_events_path) %> ><%= link_to 'Events', admin_events_path %></li>
+  <li class: <%= cpa(admin_deals_path) %> ><%= link_to 'Deals', admin_deals_path %></li>
+  <hr>
+  <li class: <%= cpa(admin_dynamic_contents_path) %> ><%= link_to 'Areas', admin_areas_path  %></li>
+  <li class: <%= cpa(admin_dynamic_contents_path) %> ><%= link_to 'Cuisines', admin_cuisines_path  %></li>
+  <li class: <%= cpa(admin_dynamic_contents_path) %> ><%= link_to 'Dynamic Content', admin_dynamic_contents_path  %></li>
+  <li class: <%= cpa(admin_dynamic_contents_path) %> ><%= link_to 'Features', admin_features_path  %></li>
+  <li class: <%= cpa(admin_dynamic_contents_path) %> ><%= link_to 'Price', admin_prices_path  %></li>
+  <li class: <%= cpa(admin_dynamic_contents_path) %> ><%= link_to 'Types', admin_types_path  %></li>
+  <hr>
+  <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
+</ul>

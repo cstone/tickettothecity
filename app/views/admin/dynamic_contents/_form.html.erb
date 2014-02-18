@@ -1,13 +1,22 @@
 <%= simple_form_for([:admin, @dynamic_content]) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :key %>
-    <%= f.input :value %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <table>
+      <tr>
+        <td colspan="2"><%= f.error_notification %></td>
+      </tr>
+      <tr>
+        <td>Title:</td>
+        <td><%= f.input :title, label: false %></td>
+      </tr>
+      <tr>
+        <td>Key:</td>
+        <td><%= f.input :key, label: false %></td>
+      </tr>
+      <tr>
+        <td valign="top">Value:</td>
+        <td><%= f.input :value, label: false %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.button :submit, class: 'btn btn-success' %></td>
+      </tr>
+    </table>
 <% end %>

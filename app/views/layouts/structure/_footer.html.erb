@@ -50,12 +50,12 @@
       <div class="span4">
         <h3>Address</h3>
         <address>
-          Ticket To The City<br>
-          Dallas, Texas<br>
-          <i class="myicon-phone"></i>(555) 555-5555<br>
-          <i class="myicon-mail"></i>tonya@tickettothecity.com
+          <%= strip_tags(@site_name) %><br>
+          <%= strip_tags(@site_city) %>, <%= strip_tags(@site_state) %><br>
+          <i class="myicon-phone"></i><%= strip_tags(@site_phone) %><br>
+          <i class="myicon-mail"></i><%= mail_to "#{strip_tags(@site_email)}", "#{strip_tags(@site_email)}" %>
         </address>
-        Ut eu nulla eget massa blandit eleifend vel sedis lacus. Sed at viverra nulla. Fusce vel adipisci odio. Phasellus commodo, mauris eget pharetra scelerisque, est justo lacinia tortor.
+        <%= strip_tags(@site_description) %>
       </div>
     </div>
   </div>

@@ -1,18 +1,18 @@
-<h2>Listing Dynamic Content</h2>
+<h2>Dynamic Content</h2>
 
-<table width="100%" class="table">
+<table class="table">
   <tr>
     <th width="25%">Title</th>
     <th width="25%">Key</th>
-    <th width="20%">Value</th>
-    <th width="30%"></th>
+    <th width="25%">Value</th>
+    <th width="25%" align="right"></th>
   </tr>
 
   <% @dynamic_contents.each do |dynamic_content| %>
       <tr>
         <td><%= dynamic_content.title %></td>
         <td><%= dynamic_content.key %></td>
-        <td><%= dynamic_content.value %></td>
+        <td><%= strip_tags dynamic_content.value %></td>
         <td align="right"><%= link_to 'Edit', edit_admin_dynamic_content_path(dynamic_content), class: 'btn btn-small btn-warning' %> <%= link_to 'Destroy', admin_dynamic_content_path(dynamic_content), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-small btn-danger'  %></td>
       </tr>
   <% end %>
@@ -20,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New Dynamic content', new_admin_dynamic_content_path %>
+<%= link_to 'New Dynamic content', new_admin_dynamic_content_path, class: 'btn btn-success' %>
