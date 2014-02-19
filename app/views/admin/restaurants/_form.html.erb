@@ -2,27 +2,31 @@
     <table class="table">
       <tr>
         <td>Title:</td>
-        <td><%= f.input_field :title, class: 'form-control' %></td>
+        <td><%= f.input_field :title, label: false, class: 'form-control' %></td>
       </tr>
       <tr>
         <td valign="top">Description:</td>
-        <td><%= f.input_field :description %></td>
+        <td><%= f.input_field :description, label: false %></td>
       </tr>
       <tr>
         <td valign="top">Image:</td>
-        <td><%= f.file_field :restaurant_image %></td>
+        <td><%= f.file_field :restaurant_image, label: false %></td>
+      </tr>
+      <tr>
+        <td valign="top">Remove Current Image:</td>
+        <td><%= f.check_box :remove_restaurant_image %></td>
       </tr>
       <tr>
         <td valign="top">Address:</td>
-        <td><%= f.input_field :address %></td>
+        <td><%= f.input_field :address, label: false %></td>
       </tr>
       <tr>
         <td valign="top">Phone:</td>
-        <td><%= f.input_field :phone %></td>
+        <td><%= f.input_field :phone, label: false %></td>
       </tr>
       <tr>
         <td valign="top">Website:</td>
-        <td><%= f.input_field :website %></td>
+        <td><%= f.input_field :website, label: false %></td>
       </tr>
       <tr>
         <td valign="top">Areas:</td>
@@ -41,7 +45,7 @@
         <td><%= f.association :price, label_method: :value, label: false, as: :radio_buttons  %></td>
       </tr>
       <tr>
-        <td valign="top"><%= f.button :submit %></td>
+        <td valign="top"><%= f.button :submit, class: 'btn btn-success' %></td>
         <td></td>
       </tr>
     </table>

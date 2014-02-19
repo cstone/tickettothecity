@@ -1,14 +1,31 @@
 <%= simple_form_for([:admin, @deal], html: {multipart: true, class: "form-horizontal"}) do |f| %>
-  <%= f.error_notification %>
+    <table class="table">
+      <tr>
+        <td colspan="2"> <%= f.error_notification %></td>
+      </tr>
+      <tr>
+        <td>Title: </td>
+        <td><%= f.input :title, label: false %></td>
+      </tr>
+      <tr>
+        <td>Details: </td>
+        <td><%= f.input :details, label: false %></td>
+      </tr>
+      <tr>
+        <td>Areas: </td>
+        <td><%= f.association :areas, label: false %></td>
+      </tr>
+      <tr>
+        <td>Image: </td>
+        <td><%= f.file_field :deal_image, label: false %></td>
+      </tr>
+      <tr>
+        <td valign="top">Remove Current Image:</td>
+        <td><%= f.check_box :remove_deal_image %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.button :submit, class: 'btn btn-success' %> <%= link_to 'Cancel', :back, class: 'btn btn-small btn-default' %></td>
+      </tr>
+    </table>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :details %>
-    <%= f.association :areas %>
-    <%= f.file_field :deal_image %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
 <% end %>
