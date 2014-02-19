@@ -50,7 +50,7 @@ class Admin::FeaturesController < ApplicationController
 
     respond_to do |format|
       if @feature.save
-        format.html { redirect_to admin_feature_path(@feature), notice: 'Feature was successfully created.' }
+        format.html { redirect_to admin_features_path, notice: 'Feature was successfully created.' }
         format.json { render json: @feature, status: :created, location: @feature }
       else
         format.html { render action: "new" }
@@ -66,7 +66,7 @@ class Admin::FeaturesController < ApplicationController
 
     respond_to do |format|
       if @feature.update_attributes(params[:feature])
-        format.html { redirect_to admin_feature_path(@feature), notice: 'Feature was successfully updated.' }
+        format.html { redirect_to admin_features_path, notice: 'Feature was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

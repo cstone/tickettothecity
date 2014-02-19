@@ -6,8 +6,7 @@
       </tr>
       <tr>
         <td></td>
-        <td><%= f.button :submit, class: 'btn btn-small btn-success', value: 'Update' %></td>
+        <td><%= f.button :submit, class: 'btn btn-small btn-success' %> <%= link_to 'Cancel', :back, class: 'btn btn-small btn-default' %></td>
       </tr>
     </table>
 <% end %>
-

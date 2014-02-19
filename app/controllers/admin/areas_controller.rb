@@ -38,7 +38,7 @@ class Admin::AreasController < ApplicationController
 
     respond_to do |format|
       if @area.save
-        format.html { redirect_to admin_area_path(@area), notice: 'Area was successfully created.' }
+        format.html { redirect_to admin_areas_path, notice: 'Area was successfully created.' }
         format.json { render json: @area, status: :created, location: @area }
       else
         format.html { render action: "new" }

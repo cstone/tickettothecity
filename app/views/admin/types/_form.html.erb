@@ -2,10 +2,10 @@
     <table class="table">
       <tr>
         <td>Name:</td>
-        <td><%= f.input :name %></td>
+        <td><%= f.input :name, label: false %></td>
       </tr>
       <tr>
-        <td colspan="2"><%= f.button :submit %></td>
+        <td colspan="2"><%= f.button :submit, class: 'btn btn-success' %> <%= link_to 'Cancel', :back, class: 'btn btn-small btn-default' %></td>
       </tr>
     </table>
 <% end %>
