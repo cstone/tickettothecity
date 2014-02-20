@@ -3,7 +3,7 @@ Tickettothecity::Application.routes.draw do
 
   devise_for :admins
 
-  root :to => 'restaurants#show', id: '1'
+  root :to => 'restaurants#show', id: '2'
 
   resources :restaurants, only: [ :index, :show ]
   resources :attractions, only: [ :index, :show ]
