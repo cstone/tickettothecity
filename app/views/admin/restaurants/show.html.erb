@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<table>
+<table class="table">
   <tr>
     <td>Title: </td>
     <td><%= @restaurant.title %></td>
@@ -26,15 +26,25 @@
   </tr>
   <tr>
     <td>Area: </td>
-    <td><%= @restaurant.areas %></td>
+    <td>
+      <% if !@restaurant.areas.empty? %>
+          <%= @restaurant.areas.map{|area| area.name}.join(", ") %>
+      <% end %>
+    </td>
   </tr>
   <tr>
     <td>Cuisine: </td>
-    <td><%= @restaurant.cuisines %></td>
+    <td><% if !@restaurant.cuisines.empty? %>
+          <%= @restaurant.cuisines.map{|cuisine| cuisine.name}.join(", ") %>
+      <% end %></td>
   </tr>
   <tr>
     <td>Feature: </td>
-    <td><%= @restaurant.features %></td>
+    <td>
+      <% if !@restaurant.features.empty? %>
+          <%= @restaurant.features.map{|feature| feature.name}.join(", ") %>
+      <% end %>
+    </td>
   </tr>
   <tr>
     <td>Price: </td>
