@@ -1,55 +1,48 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @restaurant.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @restaurant.description %>
-</p>
-
-<p>
-  <b>Restaurant image:</b>
-  <%= image_tag @restaurant.restaurant_image.url(:main).to_s %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @restaurant.phone %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= link_to @restaurant.website, @restaurant.website %>
-</p>
-
-<p>
-  <b>Area:</b>
-  <%= @restaurant.areas %>
-</p>
-
-<p>
-  <b>Cuisine:</b>
-  <%= @restaurant.cuisines %>
-</p>
-
-<p>
-  <b>Feature:</b>
-  <%= @restaurant.features %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @restaurant.price.value %>
-</p>
+<table>
+  <tr>
+    <td>Title: </td>
+    <td><%= @restaurant.title %></td>
+  </tr>
+  <tr>
+    <td>Description: </td>
+    <td><%= @restaurant.description %></td>
+  </tr>
+  <tr>
+  <td>Image: </td>
+  <td><%= image_tag @restaurant.restaurant_image.url(:main).to_s %></td>
+</tr>
+  <tr>
+  <td>Address: </td>
+  <td><%= @restaurant.address %></td>
+</tr>
+  <tr>
+    <td>Phone: </td>
+    <td><%= @restaurant.phone %></td>
+  </tr>
+  <tr>
+    <td>Website: </td>
+    <td><%= @restaurant.website %></td>
+  </tr>
+  <tr>
+    <td>Area: </td>
+    <td><%= @restaurant.areas %></td>
+  </tr>
+  <tr>
+    <td>Cuisine: </td>
+    <td><%= @restaurant.cuisines %></td>
+  </tr>
+  <tr>
+    <td>Feature: </td>
+    <td><%= @restaurant.features %></td>
+  </tr>
+  <tr>
+    <td>Price: </td>
+    <td><%= @restaurant.price.value %></td>
+  </tr>
+</table>
 
 
-<%= link_to 'Edit', edit_admin_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', admin_restaurants_path %>
+
+<%= link_to 'Edit', edit_admin_restaurant_path(@restaurant), class: 'btn btn-small btn-warning'  %>
+<%= link_to 'Back', admin_restaurants_path, class: 'btn btn-small btn-danger' %>
