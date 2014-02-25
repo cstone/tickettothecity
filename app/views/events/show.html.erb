@@ -25,7 +25,7 @@
       <div class="span12">
         <div class="row-fluid itemtitle"><%= @event.title %></div>
 
-        <div class="row-fluid"><%= @event.areas.map{|area| area.name}.join(",") %></div>
+        <div class="row-fluid"><%= @event.areas.map{|area| area.name}.join(", ") %></div>
         <div class="row-fluid"><%= link_to(@event.address, "http://maps.google.com/maps?q=#{@event.address}") %></div>
         <div class="row-fluid"><%= @event.phone %></div>
         <div class="row-fluid"><%= link_to(@event.website, @event.website) if !@event.website.empty? %></div>

@@ -7,7 +7,7 @@
 
     <div class="row-fluid">
       <% if !restaurant.areas.empty? %>
-              <%= restaurant.areas.map{|area| area.name}.join(",") %>
+              <%= restaurant.areas.map{|area| area.name}.join(", ") %>
       <% end %>
     </div>
     <div class="row-fluid">

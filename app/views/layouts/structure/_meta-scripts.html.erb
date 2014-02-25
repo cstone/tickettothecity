@@ -13,13 +13,14 @@
 <script>
     tinymce.init({
         selector:'textarea',
-        editor_deselector : 'mceNoEditor',
+        editor_deselector : "mceNoEditor", // class="mceNoEditor" will not have tinyMCE
         plugins: [
             "advlist autolink link lists charmap print preview hr anchor pagebreak spellchecker",
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
             "save table contextmenu directionality emoticons template paste textcolor"
         ]
     });
+
 </script>
 <!--Le Java Script-->
 <script type="text/javascript" src="https://s3.amazonaws.com/tickettothecity/js/jquery.min.js"></script>

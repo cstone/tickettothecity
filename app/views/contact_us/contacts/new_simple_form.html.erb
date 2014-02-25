@@ -5,6 +5,6 @@
   <%= f.input :name, :label => t('.name') if ContactUs.require_name %>
   <%= f.input :email, :label => t('.email') %>
   <%= f.input :subject, :label => t('.subject') if ContactUs.require_subject %>
-  <%= f.input :message, :as => :text, :label => t('.message'), class: 'mceNoEditor' %>
+  <%= f.input :message, :as => :text, :label => t('.message'), :input_html => { :class => 'mceNoEditor' } %>
   <%= f.button :submit, :value => t('.submit'), :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') %>
 <% end %>

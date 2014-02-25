@@ -4,6 +4,9 @@
     <div class="row-fluid individualitem">
       <div class="span10">
         <div class="row-fluid itemtitle"><%= link_to deal.title, deal %></div>
+        <div class="row-fluid"> <% if !deal.areas.empty? %>
+              <%= deal.areas.map{|area| area.name}.join(", ") %>
+          <% end %></div>
         <div class="row-fluid"><%= simple_format(deal.details.truncate(300)) %></div>
       </div>
       <div class="span2">

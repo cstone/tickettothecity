@@ -1,0 +1,16 @@
+<%= simple_form_for([:admin, @banner], html: {multipart: true, class: "form-horizontal"}) do |f| %>
+  <table class="table">
+    <tr>
+      <td colspan="2"><%= f.error_notification %></td>
+    </tr>
+    <tr>
+      <td>Banner Image:</td>
+      <td><%= f.input :banner_image, label: false  %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= f.button :submit, class: 'btn btn-success'  %></td>
+    </tr>
+  </table>
+
+
+<% end %>
