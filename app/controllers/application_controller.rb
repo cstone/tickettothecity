@@ -24,5 +24,6 @@ class ApplicationController < ActionController::Base
     @footer_copyright = DynamicContent.get_value(:footer_copyright)
     @home_title = DynamicContent.get_value(:home_title)
     @home_content = DynamicContent.get_value(:home_content)
+    @banners = Banner.all
   end
 end

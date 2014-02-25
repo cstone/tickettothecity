@@ -1,0 +1,17 @@
+
+
+<section class="container">
+  <div id="ei-slider" class="ei-slider">
+    <ul class="ei-slider-large">
+      <% @banners.each do |banner| %>
+          <li><%= image_tag banner.banner_image, alt: 'Banner Image' %></li>
+      <% end  %>
+    </ul><!-- ei-slider-large -->
+    <ul class="ei-slider-thumbs">
+      <li class="ei-slider-element">Current</li>
+      <% @banners.each do |banner| %>
+          <li><%= image_tag banner.banner_image %></li>
+      <% end  %>
+    </ul><!-- ei-slider-thumbs -->
+  </div><!-- ei-slider -->
+</section>
