@@ -1,9 +1,11 @@
 Tickettothecity::Application.routes.draw do
 
 
+  get "home/index"
+
   devise_for :admins
 
-  root :to => 'restaurants#index'
+  root :to => 'home#index'
 
   resources :restaurants, only: [ :index, :show ]
   resources :attractions, only: [ :index, :show ]

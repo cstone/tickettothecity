@@ -1,4 +1,7 @@
 class BannersController < ApplicationController
+
+
+
   # GET /banners
   # GET /banners.json
   def index

@@ -22,5 +22,7 @@ class ApplicationController < ActionController::Base
     @site_email = DynamicContent.get_value(:site_email)
     @site_description = DynamicContent.get_value(:site_description)
     @footer_copyright = DynamicContent.get_value(:footer_copyright)
+    @home_title = DynamicContent.get_value(:home_title)
+    @home_content = DynamicContent.get_value(:home_content)
   end
 end

@@ -44,7 +44,7 @@ class BannerImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-    process :resize_to_limit => [250, 0]
+    process :resize_to_limit => [275, 0]
   end
 
   # Create different versions of your uploaded files:
