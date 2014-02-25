@@ -45,6 +45,10 @@
         <td><%= f.association :price, label_method: :value, label: false, as: :radio_buttons  %></td>
       </tr>
       <tr>
+        <td valign="top">Featured:</td>
+        <td><%= f.input :featured_restaurant, as: :radio, label: false %></td>
+      </tr>
+      <tr>
         <td valign="top"><%= f.button :submit, class: 'btn btn-success' %></td>
         <td></td>
       </tr>

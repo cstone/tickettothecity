@@ -1,6 +1,7 @@
 class Admin::BannersController < ApplicationController
 
   layout 'admin'
+  before_filter :authenticate_admin!
 
   # GET /banners
   # GET /banners.json

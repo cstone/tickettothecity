@@ -6,6 +6,16 @@
         <h3>HIGHLIGHTS</h3>
       </div>
 
+      <% @restaurant.featured do |restaurant| %>
+      <article class="span3">
+        <%= link_to image_tag(restaurant.restaurant_image) %>
+        <p class="l-meta"><span><%= restaurant.area %></span></p>
+        <h4 class="title"><%= restaurant.title %></h4>
+        <p><%= truncate(restaurant.description, 100) %></p>
+        <%= link_to 'Read More...', restaurant %>
+      </article>
+      <% end %>
+
       <article class="span3">
         <a href="restaurantdetails.php?id=8" class="read-more"><img src="uploaded/1366128149.jpg" alt="photo" border="0"/></a>
         <p class="l-meta"><span> Dallas, Texas </span></p>

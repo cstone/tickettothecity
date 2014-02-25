@@ -39,7 +39,7 @@
       <% end %></td>
   </tr>
   <tr>
-    <td>Feature: </td>
+    <td>Features: </td>
     <td>
       <% if !@restaurant.features.empty? %>
           <%= @restaurant.features.map{|feature| feature.name}.join(", ") %>
@@ -49,6 +49,10 @@
   <tr>
     <td>Price: </td>
     <td><%= @restaurant.price.value %></td>
+  </tr>
+  <tr>
+    <td>Featured Restaurant: </td>
+    <td><%= @restaurant.featured_restaurant %></td>
   </tr>
 </table>
 
