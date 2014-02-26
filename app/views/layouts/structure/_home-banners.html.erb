@@ -10,7 +10,7 @@
     <ul class="ei-slider-thumbs">
       <li class="ei-slider-element">Current</li>
       <% @banners.each do |banner| %>
-          <li><%= image_tag banner.banner_image %></li>
+          <li><%= image_tag banner.banner_image.url(:small).to_s %></li>
       <% end  %>
     </ul><!-- ei-slider-thumbs -->
   </div><!-- ei-slider -->

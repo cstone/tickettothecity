@@ -20,7 +20,7 @@
             <h5>Cuisine</h5>
             <ul style="list-style: none;">
               <% Cuisine.all.each do |cuisine| %>
-                  <li><%= hidden_field_tag 'q[cuisines_id_eq_any][]', "1" %> <%= check_box_tag('q[cuisines_id_eq_any][]', cuisine.id ) %>
+                  <li><%= check_box_tag('q[cuisines_id_eq_any][]', cuisine.id ) %>
                     <%= cuisine.name %></li>
               <% end %>
             </ul>
