@@ -6,11 +6,11 @@
   </tr>
   <tr>
     <td>Details: </td>
-    <td><%= @event.details %></td>
+    <td><%= sanitize @event.details %></td>
   </tr>
   <tr>
     <td>Event Image:</td>
-    <td><%= image_tag @event.event_image %></td>
+    <td><%= image_tag @event.event_image, class: 'thumbnail' %></td>
   </tr>
   <tr>
     <td>Venue: </td>

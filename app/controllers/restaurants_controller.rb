@@ -4,10 +4,12 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    @search = Restaurant.search(params[:q])
+    @restaurants = @search.result(distinct: true)
+    #@restaurants = Restaurant.all
 
     respond_to do |format|
-      format.html { render layout: 'page-with-left-sidebar'}
+      format.html
       format.json { render json: @restaurants }
     end
   end
@@ -19,7 +21,7 @@ class RestaurantsController < ApplicationController
     @areas = @restaurant.areas
 
     respond_to do |format|
-      format.html { render layout: 'layout-no-sidebar'}
+      format.html
       format.json { render json: @restaurant }
     end
   end

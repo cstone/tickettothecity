@@ -6,11 +6,11 @@
   </tr>
   <tr>
     <td>Description: </td>
-    <td><%= @restaurant.description %></td>
+    <td><%= sanitize @restaurant.description %></td>
   </tr>
   <tr>
   <td>Image: </td>
-  <td><%= image_tag @restaurant.restaurant_image.url(:main).to_s %></td>
+  <td><%= image_tag @restaurant.restaurant_image.url(:main).to_s, class: 'thumbnail' %></td>
 </tr>
   <tr>
   <td>Address: </td>
@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td>Website: </td>
-    <td><%= @restaurant.website %></td>
+    <td><%= link_to @restaurant.website, @restaurant.website %></td>
   </tr>
   <tr>
     <td>Area: </td>
