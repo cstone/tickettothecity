@@ -13,7 +13,7 @@
     <div class="row-fluid">
       <% if !restaurant.cuisines.empty? %>
       <% restaurant.cuisines.each do |cuisine| %>
-      <strong><%= cuisine.name %></strong>
+      <%= cuisine.name %>
       <% end %>
       <% end %>
     </div>

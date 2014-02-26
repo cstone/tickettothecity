@@ -13,7 +13,7 @@
       <tr>
         <td><%= image_tag restaurant.restaurant_image.url(:thumb).to_s, class: 'thumbnail' %></td>
         <td><%= link_to restaurant.title, admin_restaurant_path(restaurant) %></td>
-        <td><%= restaurant.featured_restaurant %></td>
+        <td><%= link_to restaurant.toggle(:featured_restaurant) %></td>
         <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant), class: 'btn btn-small btn-warning'   %></td>
         <td><%= link_to 'Delete', restaurant, method: :delete, data: { confirm: 'Are you sure you want to delete this restaurant?' }, class: 'btn btn-small btn-danger'  %></td>
       </tr>

@@ -25,5 +25,6 @@ class ApplicationController < ActionController::Base
     @home_title = DynamicContent.get_value(:home_title)
     @home_content = DynamicContent.get_value(:home_content)
     @banners = Banner.all
+    @home_featured_restaurants = Restaurant.featured.all(order: "RANDOM()", limit: 4)
   end
 end

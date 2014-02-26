@@ -3,50 +3,19 @@
     <div class="row our-blog">
       <div class="title-divider span12">
         <div class="divider-arrow"></div>
-        <h3>HIGHLIGHTS</h3>
+        <h3>Popular Restaurants</h3>
       </div>
 
-      <% @restaurant.featured do |restaurant| %>
+      <% @home_featured_restaurants.each do |restaurant| %>
       <article class="span3">
-        <%= link_to image_tag(restaurant.restaurant_image) %>
-        <p class="l-meta"><span><%= restaurant.area %></span></p>
-        <h4 class="title"><%= restaurant.title %></h4>
-        <p><%= truncate(restaurant.description, 100) %></p>
-        <%= link_to 'Read More...', restaurant %>
+        <%= link_to image_tag(restaurant.restaurant_image), restaurant %>
+        <p class="l-meta"><span><% if !restaurant.areas.empty? %>
+              <%= link_to restaurant.areas.map{|area| area.name}.join(", "), restaurant %>
+      <% end %></span></p>
+        <h4 class="title"><%= link_to restaurant.title, restaurant %></h4>
+        <p><%= sanitize restaurant.description.truncate(150) %> <%= link_to 'Read more', restaurant %></p>
       </article>
       <% end %>
-
-      <article class="span3">
-        <a href="restaurantdetails.php?id=8" class="read-more"><img src="uploaded/1366128149.jpg" alt="photo" border="0"/></a>
-        <p class="l-meta"><span> Dallas, Texas </span></p>
-        <h4 class="title"><a href="restaurantdetails.php?id=8">Restaurant</a></h4>
-        <p>AAAAAAAAAAAAA </p>
-        <a href="restaurantdetails.php?id=8" class="read-more">Read More...</a>
-      </article>
-
-      <article class="span3">
-        <a href="restaurantdetails.php?id=6" class="read-more"><img src="uploaded/1365590969.jpg" alt="photo" border="0"/></a>
-        <p class="l-meta"><span> Dallas, Texas </span></p>
-        <h4 class="title"><a href="restaurantdetails.php?id=6">Restaurant 2</a></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue. Ut tristique   </p>
-        <a href="restaurantdetails.php?id=6" class="read-more">Read More...</a>
-      </article>
-
-      <article class="span3">
-        <a href="restaurantdetails.php?id=7" class="read-more"><img src="uploaded/1365591009.jpg" alt="photo" border="0"/></a>
-        <p class="l-meta"><span> Dallas, Texas </span></p>
-        <h4 class="title"><a href="restaurantdetails.php?id=7">Restaurant 1</a></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue. Ut tristique   </p>
-        <a href="restaurantdetails.php?id=7" class="read-more">Read More...</a>
-      </article>
-
-      <article class="span3">
-        <a href="restaurantdetails.php?id=5" class="read-more"><img src="uploaded/1365590898.jpg" alt="photo" border="0"/></a>
-        <p class="l-meta"><span> Dallas, Texas </span></p>
-        <h4 class="title"><a href="restaurantdetails.php?id=5">Restaurant 3</a></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus. Nullam at lectus augue. Ut tristique </p>
-        <a href="restaurantdetails.php?id=5" class="read-more">Read More...</a>
-      </article>
 
     </div>
   </div>
