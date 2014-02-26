@@ -5,39 +5,33 @@
       <hr>
       <%= search_form_for @search do |f| %>
           <div class="row-fluid">
+            <%= f.text_field :title_cont, placeholder: 'Search...', class: 'span10' %>
+          </div>
+          <div class="row-fluid">
             <h5>Areas</h5>
             <ul style="list-style: none;">
-              <% Area.all.each do |area| %>
                   <li>
-                    <%= check_box_tag('q[areas_id_eq_any][]', area.id ) %>
-                    <%= area.name %>
+                    <%= f.collection_check_boxes :areas_id_eq_any, Area.order(:name), :id, :name %>
                   </li>
-              <% end %>
             </ul>
 
           </div>
           <div class="row-fluid">
             <h5>Cuisine</h5>
             <ul style="list-style: none;">
-              <% Cuisine.all.each do |cuisine| %>
-                  <li><%= check_box_tag('q[cuisines_id_eq_any][]', cuisine.id ) %>
-                    <%= cuisine.name %></li>
-              <% end %>
+              <li>
+                <%= f.collection_check_boxes :cuisines_id_eq_any, Cuisine.order(:name), :id, :name %>
+              </li>
             </ul>
           </div>
           <div class="row-fluid">
             <h5>Features</h5>
             <ul style="list-style: none;">
-              <% Feature.all.each do |feature| %>
-                  <li><%= check_box_tag('q[features_id_eq_any][]', feature.id ) %>
-                    <%= feature.name %></li>
-              <% end %>
+              <li>
+                <%= f.collection_check_boxes :features_id_eq_any, Feature.order(:name), :id, :name %>
+              </li>
             </ul>
           </div>
-
-
-
-
           <div class="actions"><%= f.submit "Search", class: 'btn btn-primary' %> <%= link_to 'Clear search', request.path, class: 'btn btn-primary btn-small'  %></div>
       <% end %>
     </div>
@@ -46,9 +40,6 @@
 
     <div class="span9 borderleft">
       <h2>Dining</h2>
-      <%= search_form_for @search do |f| %>
-            <%= f.text_field :title_cont, placeholder: 'Search...', class: 'span10' %>
-          <% end %>
       <% @restaurants.each do |restaurant| %>
           <div class="row-fluid individualitem">
             <div class="span10">

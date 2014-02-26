@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   def index
     @search = Restaurant.search(params[:q])
     @restaurants = @search.result(distinct: true)
+    @count = @restaurants.count
     #@restaurants = Restaurant.all
 
     respond_to do |format|
