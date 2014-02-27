@@ -2,7 +2,6 @@
   <div class="row-fluid">
     <div class="span3">
       <h4>Filter</h4>
-      <hr>
       <%= search_form_for(@search, :html => { :class => '' }) do |f| %>
           <div class="row-fluid">
               <div class="span6"><%= f.text_field :title_cont, placeholder: 'Search...', class: 'span12', id: 'appendedInputButton' %></div>
