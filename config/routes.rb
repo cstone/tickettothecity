@@ -1,6 +1,9 @@
 Tickettothecity::Application.routes.draw do
 
 
+
+
+
   get "home/index"
 
   devise_for :admins
@@ -11,6 +14,7 @@ Tickettothecity::Application.routes.draw do
   resources :attractions, only: [ :index, :show ]
   resources :events, only: [ :index, :show ]
   resources :deals, only: [ :index, :show ]
+  resources :city_guides, only: [ :show ]
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
@@ -25,6 +29,7 @@ Tickettothecity::Application.routes.draw do
     resources :deals
     resources :dynamic_contents
     resources :banners, except: [ :show ]
+    resources :city_guides
   end
 
 

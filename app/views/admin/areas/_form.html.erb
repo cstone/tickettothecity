@@ -10,7 +10,7 @@
         <td><%= f.input :active, label: false %></td>
       </tr>
       <tr>
-        <td colspan="2"><%= f.button :submit, class: 'btn btn-small btn-success' %></td>
+        <td colspan="2"><%= f.button :submit, class: 'btn btn-small btn-success' %> <%= link_to 'Cancel', :back, class: 'btn btn-small btn-default' %></td>
       </tr>
     </table>
 <% end %>

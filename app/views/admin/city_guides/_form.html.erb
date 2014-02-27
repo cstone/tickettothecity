@@ -1,0 +1,24 @@
+<%= simple_form_for([:admin, @city_guide], html: {multipart: true, class: "form-horizontal"}) do |f| %>
+    <table class="table">
+      <tr>
+        <td>Name:</td>
+        <td><%= f.input :name %></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><%= f.input :description %></td>
+      </tr>
+      <tr>
+        <td>PDF:</td>
+        <td><%= f.input :pdf, label: false %></td>
+      </tr>
+      <tr>
+        <td>Remove Current PDF:</td>
+        <td><%= f.check_box :remove_pdf %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.button :submit, class: 'btn btn-success' %> <%= link_to 'Cancel', :back, class: 'btn btn-small btn-default' %></td>
+      </tr>
+    </table>
+
+<% end %>

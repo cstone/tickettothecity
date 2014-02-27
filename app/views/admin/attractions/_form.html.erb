@@ -33,7 +33,7 @@
         <td><%= f.association :areas, label: false %></td>
       </tr>
       <tr>
-        <td valign="top"><%= f.button :submit, class: 'btn btn-success' %></td>
+        <td valign="top"><%= f.button :submit, class: 'btn btn-success' %> <%= link_to 'Cancel', :back, class: 'btn btn-small btn-default' %></td>
         <td></td>
       </tr>
     </table>
