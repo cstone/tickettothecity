@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140227155125) do
+ActiveRecord::Schema.define(:version => 20140228011950) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -128,6 +128,14 @@ ActiveRecord::Schema.define(:version => 20140227155125) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "deals_types", :id => false, :force => true do |t|
+    t.integer "deal_id"
+    t.integer "type_id"
+  end
+
+  add_index "deals_types", ["deal_id"], :name => "index_deals_types_on_deal_id"
+  add_index "deals_types", ["type_id"], :name => "index_deals_types_on_type_id"
 
   create_table "dynamic_contents", :force => true do |t|
     t.string   "title"
