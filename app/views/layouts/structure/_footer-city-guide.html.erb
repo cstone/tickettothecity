@@ -1,4 +1,4 @@
 <h3>Download Our City Guide</h3>
 <h5><%= link_to @footer_city_guide.name, @footer_city_guide.pdf.url %></h5>
 <p><%= sanitize @footer_city_guide.description %></p>
-<%= link_to 'Download', @footer_city_guide.pdf.url, class: 'btn pull-right footer-button' %>
+<p><%= link_to "Download #{@footer_city_guide.name}", @footer_city_guide.pdf.url, class: 'pull-right' %></p>
