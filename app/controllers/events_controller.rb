@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     @count = @events.count
 
     respond_to do |format|
-      format.html { render layout: 'page-with-left-sidebar'}
+      format.html
       format.json { render json: @events }
     end
   end
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     respond_to do |format|
-      format.html { render layout: 'layout-no-sidebar'}
+      format.html 
       format.json { render json: @event }
     end
   end

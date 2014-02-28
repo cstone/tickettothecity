@@ -7,7 +7,7 @@ class DealsController < ApplicationController
     @count = @deals.count
 
     respond_to do |format|
-      format.html { render layout: 'page-with-left-sidebar'}
+      format.html
       format.json { render json: @deals }
     end
   end
@@ -18,7 +18,7 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
 
     respond_to do |format|
-      format.html { render layout: 'layout-no-sidebar'}
+      format.html
       format.json { render json: @deal }
     end
   end
