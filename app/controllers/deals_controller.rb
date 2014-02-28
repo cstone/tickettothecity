@@ -2,7 +2,9 @@ class DealsController < ApplicationController
   # GET /deals
   # GET /deals.json
   def index
-    @deals = Deal.all
+    @search = Deal.search(params[:q])
+    @deals = @search.result(distinct: true)
+    @count = @deals.count
 
     respond_to do |format|
       format.html { render layout: 'page-with-left-sidebar'}

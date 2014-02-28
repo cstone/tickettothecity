@@ -25,7 +25,8 @@
       <div class="span12">
         <div class="row-fluid itemtitle"><%= @attraction.title %></div>
 
-        <div class="row-fluid"><%= @attraction.areas.map{|area| area.name}.join(",") %></div>
+        <div class="row-fluid"><%= @attraction.areas.map{|area| area.name}.join(", ") %></div>
+        <div class="row-fluid"><%= @attraction.types.map{|type| type.name}.join(", ") %></div>
         <div class="row-fluid"><%= link_to(@attraction.address, "http://maps.google.com/maps?q=#{@attraction.address}") %></div>
         <div class="row-fluid"><%= @attraction.phone %></div>
         <div class="row-fluid"><%= link_to(@attraction.website, @attraction.website) if !@attraction.website.empty? %></div>
@@ -55,3 +56,4 @@
     </div>
   </div>
 </section>
+<br/>

@@ -29,6 +29,10 @@
     <td>Areas: </td>
     <td><%= @attraction.areas.map{|area| area.name}.join(", ") %></td>
   </tr>
+  <tr>
+    <td>Types: </td>
+    <td><%= @attraction.types.map{|type| type.name}.join(", ") %></td>
+  </tr>
 </table>
 
 <%= link_to 'Edit', edit_admin_attraction_path(@attraction), class: 'btn btn-small btn-warning' %>

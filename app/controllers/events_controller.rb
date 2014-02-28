@@ -2,7 +2,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @search = Event.search(params[:q])
+    @events = @search.result(distinct: true)
+    @count = @events.count
 
     respond_to do |format|
       format.html { render layout: 'page-with-left-sidebar'}

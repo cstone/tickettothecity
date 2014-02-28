@@ -2,10 +2,12 @@ class AttractionsController < ApplicationController
   # GET /attractions
   # GET /attractions.json
   def index
-    @attractions = Attraction.all
+    @search = Attraction.search(params[:q])
+    @attractions = @search.result(distinct: true)
+    @count = @attractions.count
 
     respond_to do |format|
-      format.html { render layout: 'page-with-left-sidebar'}
+      format.html
       format.json { render json: @attractions }
     end
   end
@@ -16,7 +18,7 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
 
     respond_to do |format|
-      format.html { render layout: 'layout-no-sidebar'}
+      format.html
       format.json { render json: @attraction }
     end
   end
