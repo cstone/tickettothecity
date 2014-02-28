@@ -26,6 +26,7 @@
         <div class="row-fluid itemtitle"><%= @deal.title %></div>
 
         <div class="row-fluid"><%= @deal.areas.map{|area| area.name}.join(", ") %></div>
+        <div class="row-fluid"><%= @deal.types.map{|type| type.name}.join(", ") %></div>
         <hr>
         <div class="row-fluid"><%= raw(@deal.details) %></div>
 
@@ -52,3 +53,4 @@
     </div>
   </div>
 </section>
+<br/>
