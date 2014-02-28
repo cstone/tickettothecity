@@ -3,7 +3,7 @@ class DealsController < ApplicationController
   # GET /deals.json
   def index
     @search = Deal.search(params[:q])
-    @deals = @search.result(distinct: true)
+    @deals = @search.result(distinct: true).paginate(:page => params[:page], :per_page => 25)
     @count = @deals.count
 
     respond_to do |format|

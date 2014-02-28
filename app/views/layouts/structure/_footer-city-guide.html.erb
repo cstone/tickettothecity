@@ -1,26 +1,4 @@
 <h3>Download Our City Guide</h3>
-<form id="contact" class="form-horizontal" method="post">
-  <div class="control-group">
-    <label class="control-label" for="inputName">Name</label>
-    <div class="controls">
-      <input type="text" id="inputName" placeholder="Name" name="inputName">
-      <label class="ferror" for="inputName" id="fname_error">Name is required.</label>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="inputEmail">Email</label>
-    <div class="controls">
-      <input type="text" id="inputEmail" placeholder="Email Address" name="inputEmail">
-      <label class="ferror" for="inputEmail" id="femail_error">Email is required.</label>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="inputMessage"></label>
-    <div class="controls">
-
-    </div>
-  </div>
-  <div class="submit-div">
-    <input type="submit" class="btn pull-right footer-button" value="SUBMIT!">
-  </div>
-</form>
+<h5><%= link_to @footer_city_guide.name, @footer_city_guide.pdf.url %></h5>
+<p><%= sanitize @footer_city_guide.description %></p>
+<%= link_to 'Download', @footer_city_guide.pdf.url, class: 'btn pull-right footer-button' %>

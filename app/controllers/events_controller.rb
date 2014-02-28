@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @search = Event.search(params[:q])
-    @events = @search.result(distinct: true)
+    @events = @search.result(distinct: true).paginate(:page => params[:page], :per_page => 25)
     @count = @events.count
 
     respond_to do |format|

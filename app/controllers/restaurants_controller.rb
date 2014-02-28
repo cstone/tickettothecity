@@ -5,8 +5,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @search = Restaurant.search(params[:q])
-    @restaurants = @search.result(distinct: true)
+    @restaurants = @search.result(distinct: true).paginate(:page => params[:page], :per_page => 25)
     @count = @restaurants.count
+
     #@restaurants = Restaurant.all
 
     respond_to do |format|
