@@ -33,6 +33,23 @@
 
     <div class="span9 borderleft">
       <h2>Dining</h2>
+
+
+      <div class="row-fluid">
+        <%= search_form_for(@search, :html => { :class => '' }) do |f| %>
+            <%= f.sort_fields do |s| %>
+                <%= s.sort_select @search, :name  %>
+            <% end %>
+        <% end %>
+      </div>
+
+
+
+
+
+
+
+
       <% @restaurants.each do |restaurant| %>
           <div class="row-fluid individualitem">
             <div class="span10">
