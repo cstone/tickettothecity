@@ -5,11 +5,11 @@
       </tr>
       <tr>
         <td>Title: </td>
-        <td><%= f.input :title, label: false %></td>
+        <td><%= f.input_field :title, label: false, class: 'span10' %></td>
       </tr>
       <tr>
         <td>Details: </td>
-        <td><%= f.input :details, label: false %></td>
+        <td><%= f.text_area :details, label: false, :class => "tinymce" %></td>
       </tr>
       <tr>
         <td>Areas: </td>
@@ -33,3 +33,4 @@
     </table>
 
 <% end %>
+<%= tinymce %>

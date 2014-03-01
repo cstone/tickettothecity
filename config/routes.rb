@@ -1,6 +1,5 @@
 Tickettothecity::Application.routes.draw do
 
-  get "home/index"
 
   devise_for :admins
 
@@ -14,6 +13,7 @@ Tickettothecity::Application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+    get '/login', to: 'devise/sessions#new'
     resources :restaurants
     resources :attractions
     resources :prices

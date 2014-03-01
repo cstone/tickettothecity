@@ -1,12 +1,15 @@
 <%= simple_form_for([:admin, @restaurant], html: {multipart: true, class: "form-horizontal"}) do |f| %>
     <table class="table">
       <tr>
+        <td colspan="2"> <%= f.error_notification %></td>
+      </tr>
+      <tr>
         <td>Title:</td>
-        <td><%= f.input_field :title, label: false, class: 'form-control' %></td>
+        <td><%= f.input_field :title, label: false, class: 'span10' %></td>
       </tr>
       <tr>
         <td valign="top">Description:</td>
-        <td><%= f.input_field :description, label: false %></td>
+        <td><%= f.text_area :description, label: false, :class => "tinymce" %></td>
       </tr>
       <tr>
         <td valign="top">Image:</td>
@@ -18,7 +21,7 @@
       </tr>
       <tr>
         <td valign="top">Address:</td>
-        <td><%= f.input_field :address, label: false %></td>
+        <td><%= f.input_field :address, label: false, class: 'span10' %></td>
       </tr>
       <tr>
         <td valign="top">Phone:</td>
@@ -26,7 +29,7 @@
       </tr>
       <tr>
         <td valign="top">Website:</td>
-        <td><%= f.input_field :website, label: false %></td>
+        <td><%= f.input_field :website, label: false, class: 'span10' %></td>
       </tr>
       <tr>
         <td valign="top">Areas:</td>
@@ -54,3 +57,4 @@
       </tr>
     </table>
 <% end %>
+<%= tinymce %>

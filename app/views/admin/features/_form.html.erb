@@ -1,8 +1,8 @@
 <%= simple_form_for([:admin, @feature]) do |f| %>
     <table class="table">
       <tr>
-        <td>Value:</td>
-        <td><%= f.input_field :name %></td>
+        <td>Feature Name:</td>
+        <td><%= f.input_field :name, class: 'span10' %></td>
       </tr>
       <tr>
         <td>Active:</td>

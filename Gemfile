@@ -37,6 +37,7 @@ gem 'simple_form'
 gem 'contact_us', '~> 0.5.0'
 gem 'ransack'
 gem 'will_paginate', '~> 3.0'
+gem 'tinymce-rails'
 
 
 group :development do

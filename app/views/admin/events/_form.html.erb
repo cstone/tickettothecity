@@ -1,13 +1,15 @@
 <%= simple_form_for([:admin, @event], html: {multipart: true, class: "form-horizontal"}) do |f| %>
-    <p><%= f.error_notification %></p>
-    <table>
+    <table class="table">
+      <tr>
+        <td colspan="2"> <%= f.error_notification %></td>
+      </tr>
       <tr>
         <td>Title: </td>
-        <td><%= f.input :title, label: false %></td>
+        <td><%= f.input_field :title, label: false, class: 'span10' %></td>
       </tr>
       <tr>
         <td>Details: </td>
-        <td><%= f.input :details, label: false %></td>
+        <td><%= f.text_area :details, label: false, :class => "tinymce"  %></td>
       </tr>
       <tr>
         <td>Event Image: </td>
@@ -19,23 +21,23 @@
       </tr>
       <tr>
         <td>Venue: </td>
-        <td><%= f.input :venue, label: false  %></td>
+        <td><%= f.input_field :venue, label: false, class: 'span10'  %></td>
       </tr>
       <tr>
-        <td>Prices: </td>
+        <td>Price: </td>
         <td><%= f.input :price, label: false  %></td>
       </tr>
       <tr>
         <td>Address: </td>
-        <td><%= f.input :address, label: false  %></td>
+        <td><%= f.input_field :address, label: false, class: 'span10'  %></td>
       </tr>
       <tr>
         <td>Phone: </td>
-        <td><%= f.input :phone, label: false  %></td>
+        <td><%= f.input_field :phone, label: false  %></td>
       </tr>
       <tr>
         <td>Website: </td>
-        <td><%= f.input :website, label: false  %></td>
+        <td><%= f.input_field :website, label: false, class: 'span10'  %></td>
       </tr>
       <tr>
         <td>Areas: </td>
@@ -51,3 +53,4 @@
     </table>
 
 <% end %>
+<%= tinymce %>

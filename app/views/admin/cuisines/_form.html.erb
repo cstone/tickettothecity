@@ -1,8 +1,8 @@
 <%= simple_form_for([:admin, @cuisine]) do |f| %>
     <table class="table">
       <tr>
-        <td>Name:</td>
-        <td><%= f.input :name, label: false %></td>
+        <td>Cuisine Name:</td>
+        <td><%= f.input_field :name, label: false, class: 'span10' %></td>
       </tr>
       <tr>
         <td>Active:</td>

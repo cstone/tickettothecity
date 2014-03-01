@@ -1,22 +1,23 @@
 <%= simple_form_for([:admin, @dynamic_content]) do |f| %>
-    <table>
+    <table class="table">
       <tr>
         <td colspan="2"><%= f.error_notification %></td>
       </tr>
       <tr>
         <td>Title:</td>
-        <td><%= f.input :title, label: false %></td>
+        <td><%= f.input_field :title, label: false, class: 'span10' %></td>
       </tr>
       <tr>
         <td>Key:</td>
-        <td><%= f.input :key, label: false %></td>
+        <td><%= f.input_field :key, label: false, class: 'span6' %></td>
       </tr>
       <tr>
         <td valign="top">Value:</td>
-        <td><%= f.input :value, label: false %></td>
+        <td><%= f.text_area :value, label: false, :class => "tinymce" %></td>
       </tr>
       <tr>
         <td colspan="2"><%= f.button :submit, class: 'btn btn-success' %> <%= link_to 'Cancel', :back, class: 'btn btn-small btn-default' %></td>
       </tr>
     </table>
 <% end %>
+<%= tinymce %>

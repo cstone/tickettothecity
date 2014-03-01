@@ -2,25 +2,20 @@
 
 <table width="100%" class="table">
   <tr>
-    <th width="60%">Name</th>
+    <th width="70%">Name</th>
     <th width="20%">Pdf</th>
-    <th width="10%"></th>
     <th width="10%"></th>
   </tr>
 
   <% @city_guides.each do |city_guide| %>
       <tr>
-        <td><%= link_to city_guide.name, admin_city_guide_path(city_guide) %></td>
+        <td><%= city_guide.name %></td>
         <td><%= link_to 'View current city guide', city_guide.pdf.url %></td>
         <td><%= link_to 'Edit', edit_admin_city_guide_path(city_guide), class: 'btn btn-small btn-warning' %></td>
-        <td><%= link_to 'Destroy', admin_city_guide_path(city_guide), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-small btn-danger' %></td>
       </tr>
   <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New City Guide', new_admin_city_guide_path, class: 'btn btn-success' %>
 
 
 
