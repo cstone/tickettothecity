@@ -12,8 +12,7 @@ Tickettothecity::Application.routes.draw do
   resources :city_guides, only: [ :show ]
 
   namespace :admin do
-    get '', to: 'dashboard#index', as: '/'
-    get '/login', to: 'devise/sessions#new'
+    get '', to: 'restaurants#index', as: '/'
     resources :restaurants
     resources :attractions
     resources :prices
