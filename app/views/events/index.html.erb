@@ -27,6 +27,11 @@
 
 <div class="span9 borderleft">
 <h2>Events</h2>
+  <div class="row-fluid">
+    <% if(params[:q] && @count == 0) %>
+        <h3>No results match this search</h3>
+    <% end %>
+    </div>
 <% @events.each do |event| %>
     <div class="row-fluid individualitem">
       <div class="span10">

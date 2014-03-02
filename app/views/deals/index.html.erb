@@ -28,6 +28,11 @@
 
 <div class="span9 borderleft">
 <h2>Deals</h2>
+  <div class="row-fluid">
+    <% if(params[:q] && @count == 0) %>
+        <h3>No results match this search</h3>
+    <% end %>
+  </div>
 <% @deals.each do |deal| %>
     <div class="row-fluid individualitem">
       <div class="span10">
