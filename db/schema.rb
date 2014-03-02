@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140228210808) do
+ActiveRecord::Schema.define(:version => 20140302034801) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20140228210808) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
-    t.boolean  "active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -107,7 +106,6 @@ ActiveRecord::Schema.define(:version => 20140228210808) do
 
   create_table "cuisines", :force => true do |t|
     t.string   "name"
-    t.boolean  "active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -173,7 +171,6 @@ ActiveRecord::Schema.define(:version => 20140228210808) do
 
   create_table "features", :force => true do |t|
     t.string   "name"
-    t.boolean  "active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
