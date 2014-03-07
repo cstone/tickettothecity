@@ -3,14 +3,16 @@
 <table width="100%" class="table">
   <tr>
     <th width="70%">Name</th>
-    <th width="20%">Pdf</th>
+    <th width="20%"></th>
     <th width="10%"></th>
   </tr>
 
   <% @city_guides.each do |city_guide| %>
       <tr>
         <td><%= city_guide.name %></td>
-        <td><%= link_to 'View current city guide', city_guide.pdf.url %></td>
+        <td><% if city_guide.pdf.url %>
+          <%= link_to 'View current city guide', city_guide.pdf.url %>
+              <% end %></td>
         <td><%= link_to 'Edit', edit_admin_city_guide_path(city_guide), class: 'btn btn-small btn-warning' %></td>
       </tr>
   <% end %>
