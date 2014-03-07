@@ -35,7 +35,7 @@ class RestaurantImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  process :resize_to_limit => [300, 0]
+  process :resize_to_limit => [300, 200]
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
@@ -50,10 +50,6 @@ class RestaurantImageUploader < CarrierWave::Uploader::Base
 
   version :main do
     process :resize_to_limit => [270, 0]
-  end
-
-  version :side do
-    process :resize_to_limit => [125, 0]
   end
 
   # Create different versions of your uploaded files:
