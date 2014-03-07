@@ -1,11 +1,11 @@
 <h3>Download Our City Guide</h3>
 <p>
-  <% if !@footer_city_guide.description.empty? %>
+  <% if @footer_city_guide.description %>
       <%= sanitize @footer_city_guide.description %>
   <% end %>
 </p>
 <p>
-  <% if !@footer_city_guide.pdf.url.empty? %>
+  <% if @footer_city_guide.pdf.url %>
   <%= link_to "Download guide", @footer_city_guide.pdf.url, class: 'pull-right' %>
   <% end %>
 </p>
