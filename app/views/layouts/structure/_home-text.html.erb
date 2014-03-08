@@ -1,11 +1,11 @@
 <section id="welcome" class="container">
   <h1>
-    <% if !@home_title.empty? %>
+    <% if @home_title %>
         <%= strip_tags @home_title %>
     <% end %>
   </h1>
   <p style="font-size: 15px;">
-    <% if !@home_content.empty? %>
+    <% if @home_content %>
         <%= strip_tags @home_content %>
     <% end %>
   </p>
