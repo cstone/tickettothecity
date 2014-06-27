@@ -10,7 +10,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -38,6 +38,7 @@ gem 'contact_us', '~> 0.5.0'
 gem 'ransack'
 gem 'will_paginate', '~> 3.0'
 gem 'tinymce-rails'
+gem 'activerecord-mysql2-adapter'
 
 
 group :development do
